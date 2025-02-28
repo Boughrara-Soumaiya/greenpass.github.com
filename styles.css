@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap');
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #e1e7d8; /* Vert clair naturel */
+  text-align: center;
+  color: #3a3a3a;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: #5a7d4f; /* Vert foncé naturel */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+/*=== HEADER ===*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #f4f1e6; /* Beige doux */
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 50px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+}
+
+.menu-icon {
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon .bar {
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin: 5px auto;
+  background-color: #5a7d4f; /* Vert naturel */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-icon.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-icon.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-menu {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: #f4f1e6;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 15px 15px;
+}
+
+.nav-menu.active {
+  display: flex;
+}
+
+.nav-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nav-menu li {
+  margin: 10px 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #5a7d4f; /* Vert naturel */
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #8b5e3b; /* Marron chaleureux */
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 769px) {
+  .menu-icon {
+    display: none;
+  }
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .nav-menu ul {
+    flex-direction: row;
+  }
+  .nav-menu li {
+    margin: 0 20px;
+  }
+}
+
+  /* Extra small screens (mobile portrait) */
+  @media (max-width: 480px) {
+    header {
+      padding: 10px 15px;
+    }
+
+    .logo-img {
+      width: 28px;
+    }
+
+    .nav-menu ul {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .nav-menu li {
+      margin: 10px 0;
+    }
+
+    .nav-menu a {
+      font-size: 16px;
+      padding: 5px 10px;
+    }
+  }
+
+/*=== SECTION ===*/
+  section {
+    background: #f4f1e6; /* Fond beige doux pour une ambiance chaleureuse */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 30px auto;
+    border: 5px solid #8b5e3b; /* Marron terreux */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  section:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Conteneur du mot de passe */
+  .password-section {
+    border: 2px solid #5a7d4f; /* Vert foncé naturel */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 30px auto;
+    text-align: center;
+    background: #e1e7d8; /* Vert très clair pour un fond doux */
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  input[type="password"], input[type="text"] {
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid #8b5e3b; /* Marron chaleureux */
+    font-size: 18px;
+    outline: none;
+    width: 80%;
+    background-color: #f8f5eb;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #password-strength {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #5a7d4f; /* Vert naturel */
+  }
+  
+  /* Effets pour les recommandations */
+  #password-recommendations ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #password-recommendations li {
+    background: #c0d6a4; /* Vert clair apaisant */
+    padding: 8px;
+    margin: 4px 0;
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.2s, background 0.3s;
+    font-weight: bold;
+    color: #3a3a3a;
+  }
+  
+  #password-recommendations li::before {
+    content: '🌿'; /* Icône nature */
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+  }
+  
+  /* Effet au survol */
+  #password-recommendations li:hover {
+    transform: scale(1.05);
+    background: #5a7d4f; /* Vert plus foncé au survol */
+    color: white;
+  }
+  
+  /* Effet visuel lorsqu'on affiche le mot de passe */
+  .toggle-label {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .toggle-label input {
+    margin-right: 5px;
+  }
+  
+  .toggle-label:hover {
+    color: #8b5e3b; /* Marron chaleureux */
+  }
+  
+  .character-container {
+    margin-top: 20px;
+  }
+  
+  .character {
+    width: 120px;
+    height: 140px;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .faible-character {
+    transform: scale(1);
+    filter: grayscale(100%);
+  }
+  
+  .moyen-character {
+    transform: scale(1.05);
+    filter: grayscale(50%);
+  }
+  
+  .fort-character {
+    transform: scale(1.1);
+    filter: none;
+  }
+  
+  /* Style quand le mot de passe est visible */
+  input[type="text"] {
+    background-color: #e3decf;
+    border: 2px solid #8b5e3b;
+  }
+  
+
+/*=== REGLEMENDATION ===*/
+
+.reglementation ul, .password ul {
+  list-style: none;
+  padding: 0;
+}
+
+.reglementation ul li, .password ul li {
+  background: #b5c99a; /* Vert nature doux */
+  padding: 8px;
+  margin: 4px 0;
+  border-radius: 8px;
+  position: relative;
+  transition: transform 0.2s, background 0.3s;
+  color: #3a3a3a;
+}
+
+.reglementation ul li::before, .password ul li::before {
+  content: '🌿';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+
+.reglementation ul li:hover, .password ul li:hover {
+  transform: scale(1.05);
+  background: #8b5e3b; /* Marron chaleureux */
+  color: white;
+}
+
+/*=== FAQ ===*/
+
+
+.faq {
+  margin: 30px auto;
+  background-color: #f4f1e6; /* Beige doux */
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #5a7d4f; /* Vert foncé naturel */
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+}
+
+.faq-item {
+  background-color: #e1e7d8; /* Vert clair naturel */
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  background-color: #b5c99a; /* Vert nature doux */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #5a7d4f; /* Vert naturel */
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.faq-item p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  font-family: 'Arial', sans-serif;
+}
+
+  /* Small screen adjustments */
+  @media (max-width: 768px) {
+    .faq {
+      padding: 20px;
+      margin: 10px;
+    }
+
+    .faq h2 {
+      font-size: 24px;
+    }
+
+    .faq-item h3 {
+      font-size: 18px;
+    }
+
+    .faq-item p {
+      font-size: 14px;
+    }
+  }
+
+  /* Extra small screen adjustments */
+  @media (max-width: 480px) {
+    .faq h2 {
+      font-size: 22px;
+    }
+
+    .faq-item h3 {
+      font-size: 16px;
+    }
+
+    .faq-item p {
+      font-size: 13px;
+    }
+  }
+
+
+/*=== FOOTER ===*/
+footer {
+  background-color: #d1f7d1; /* Fond doux et naturel avec une touche de vert */
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid #8fbc8f; /* Bordure légère et naturelle */
+  margin-top: 30px; /* Espacement avec le contenu précédent */
+  font-family: 'Quicksand', sans-serif;
+}
+
+footer p {
+  color: #3e721d; /* Texte dans un ton vert terreux */
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+footer p a {
+  color: #3e721d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer p a:hover {
+  color: #6dbf67; /* Vert plus clair au survol pour l'effet */
+}
+
+
+
+  /* Pour les écrans de téléphone mobile (jusqu'à 600px) */
+  @media (max-width: 600px) {
+    body {
+      padding: 10px; /* Réduire l'espace de padding */
+    }
+  
+    section {
+      padding: 15px;
+      max-width: 100%; /* Remplir toute la largeur sur les petits écrans */
+      border-radius: 10px; /* Coins moins arrondis */
+    }
+  
+    h1, h2, h3 {
+      font-size: 1.5em; /* Réduire la taille des titres */
+    }
+  
+    input[type="password"] {
+      font-size: 16px; /* Réduire la taille du texte de l'input */
+    }
+  
+    .button-link {
+      font-size: 14px; /* Réduire la taille du texte des boutons */
+      padding: 8px 12px; /* Ajuster le padding des boutons */
+    }
+  
+    nav ul {
+      flex-direction: column; /* Organiser la navigation en colonne */
+      gap: 10px;
+    }
+  
+    footer p {
+      font-size: 12px; /* Réduire la taille de la police dans le footer */
+    }
+  }
+  
+  /* Pour les écrans de tablette (jusqu'à 1024px) */
+  @media (max-width: 1024px) {
+    section {
+      padding: 18px;
+    }
+  
+    h1, h2, h3 {
+      font-size: 1.8em; /* Ajuster la taille des titres */
+    }
+  
+    .button-link {
+      font-size: 16px;
+      padding: 10px 14px;
+    }
+  
+    input[type="password"] {
+      font-size: 17px;
+    }
+  
+    footer p {
+      font-size: 13px;
+    }
+  }
+  
+  /* Pour les grands écrans de bureau (au-dessus de 1024px) */
+  @media (min-width: 1025px) {
+    section {
+      max-width: 800px; /* Taille maximale pour les sections */
+      margin: 30px auto;
+    }
+  
+    h1, h2, h3 {
+      font-size: 2.5em;
+    }
+  
+    .button-link {
+      font-size: 18px;
+      padding: 12px 18px;
+    }
+  
+    footer p {
+      font-size: 14px;
+    }
+  }  
