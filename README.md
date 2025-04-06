@@ -26,11 +26,7 @@ Le projet intègre également une dimension pédagogique, avec des sections info
 
 ## Technologies utilisées
 
-| Technologie       | Utilisation                               |
-|-------------------|-------------------------------------------|
-| HTML              | Structure et mise en page                 |
-| CSS               | Mise en style et responsivité             |
-| JavaScript        | Interactivité, analyse des mots de passe  |
+HTML, CSS et JavaScript 
 
 ## Créatrice
 
