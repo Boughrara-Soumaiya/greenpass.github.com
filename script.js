@@ -41,13 +41,13 @@ function checkPassword() {
     recommendations.style.display = strength === 'Fort' ? 'none' : 'block';
 
     if (strength === 'Faible') {
-        character.src = 'faible.jpg';
+        character.src = 'image/faible.jpg';
         character.className = 'character faible-character';
     } else if (strength === 'Moyen') {
-        character.src = 'moyen.jpg';
+        character.src = 'image/moyen.jpg';
         character.className = 'character moyen-character';
     } else if (strength === 'Fort') {
-        character.src = 'fort.jpg';
+        character.src = 'image/fort.jpg';
         character.className = 'character fort-character';
     }
 }
